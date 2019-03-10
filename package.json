@@ -1,0 +1,32 @@
+{
+  "name": "generator-terraform-module",
+  "version": "0.1.0",
+  "description": "Scaffolding for Terraform module project",
+  "main": "index.js",
+  "files": [
+    "generators"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sudokar/generator-terraform-module.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "terraform",
+    "terraform module",
+    "terraform scaffold"
+  ],
+  "author": "sudokar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sudokar/generator-terraform-module/issues"
+  },
+  "homepage": "https://github.com/sudokar/generator-terraform-module#readme",
+  "dependencies": {
+    "yeoman-generator": "^3.2.0",
+    "yosay": "^2.0.2"
+  }
+}
