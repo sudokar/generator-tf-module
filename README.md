@@ -19,7 +19,7 @@ Scaffolding for new Terraform module projects
 
 ### Installation
 
-1.  Install [nodejs](https://nodejs.org/en/download/§)
+1.  Install [nodejs](https://nodejs.org/en/download/)
     
 2.  Install Yeoman (npm install -g yo)
     
