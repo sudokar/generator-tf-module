@@ -35,7 +35,7 @@ npm install -g generator-tf-module
 To use the included generator execute the below command in shell and provide your new module name for the prompt
 
 ```sh
-yo tf-module
+> yo tf-module
 ...
 ? Enter a name for the terraform module :  example-module
 ```
