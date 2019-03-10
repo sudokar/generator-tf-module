@@ -1,5 +1,5 @@
 {
-  "name": "generator-terraform-module",
+  "name": "generator-tf-module",
   "version": "0.1.0",
   "description": "Scaffolding for Terraform module project",
   "main": "index.js",
@@ -17,7 +17,8 @@
     "yeoman-generator",
     "terraform",
     "terraform module",
-    "terraform scaffold"
+    "terraform scaffold",
+    "scaffold"
   ],
   "author": "sudokar",
   "license": "MIT",
