@@ -6,28 +6,48 @@ module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
   }
-  start() {
+
+  async prompting() {
     this.log(
-      yosay('Welcome to the terraform-module generator!')
+      yosay('Welcome to the tf-module generator!')
     );
 
-    this.prompt([{
+    this.answers = await this.prompt([{
       type: 'input',
       name: 'name',
-      message: 'Enter a name for the terraform module : ',
-      validate: input => input.length > 0
-    }]).then((answers) => {
-      this.destinationRoot(answers.name);
-    }).then(() => {
-      this.fs.copy(
-        this.templatePath('**/*'),
-        this.destinationRoot()
-      );
+      message: 'Enter name for the new terraform module : ',
+    }]);
+  }
 
-      this.fs.copy(
-        this.templatePath('.*'),
-        this.destinationRoot()
-      );
-    });
+  writing() {
+    this.destinationRoot(this.answers.name);
+
+    this.fs.copyTpl(
+      `${this.templatePath()}/**/.!(gitignore)*`,
+      this.destinationRoot(),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('.gitignorefile'),
+      this.destinationPath(`.gitignore`),
+    );
+
+    this.fs.copyTpl(
+      `${this.templatePath()}/**/*.tf`,
+      this.destinationRoot()
+    );
+
+    this.fs.copyTpl(
+      `${this.templatePath()}/**/*.go`,
+      this.destinationRoot()
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_README.md'),
+      this.destinationPath('README.md'), {
+        name: this.answers.name
+      }
+    );
   }
 };

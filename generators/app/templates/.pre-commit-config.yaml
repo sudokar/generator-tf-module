@@ -12,3 +12,4 @@ repos:
     rev: v0.3.3
     hooks:
       - id: go-fmt
+      - id: go-lint
