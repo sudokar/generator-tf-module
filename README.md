@@ -50,18 +50,19 @@ Project layout generated for the new module
 
 ```
 example-module
+├── .gitignore
 ├── .editorconfig
 ├── .pre-commit-config.yaml
 ├── .terraform-version
+├── main.tf
+├── outputs.tf
+└── variables.tf
 ├── example
 │   ├── main.tf
 │   ├── outputs.tf
 │   └── variables.tf
-├── main.tf
-├── outputs.tf
 ├── test
 │   └── example_test.go
-└── variables.tf
 ```
 
 ##### Post generation steps
