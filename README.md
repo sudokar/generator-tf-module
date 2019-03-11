@@ -69,7 +69,7 @@ example-module
 
 Step 1
 
-Intialise git repository
+On the generated module's root path, Initialize git repository
 
 ```sh
 git init
@@ -77,7 +77,7 @@ git init
 
 Step 2
 
-Install pre-commit hooks
+On the generated module's root path, Install pre-commit hooks
 
 ```sh
 pre-commit install
