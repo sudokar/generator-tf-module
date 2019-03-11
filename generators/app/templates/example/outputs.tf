@@ -1,3 +1,3 @@
-output "name" {
+output "output_name" {
   value = "value"
 }

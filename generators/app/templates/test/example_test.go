@@ -19,6 +19,9 @@ func TestTerraformExample(t *testing.T) {
 	// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
 	terraform.InitAndApply(t, terraformOptions)
 
-	// Add assertions to validate your code works as expected
-	assert.Equal(t, 123, 123, "they should be equal")
+	// Assertions
+	assert := assert.New(t)
+
+	output := terraform.Output(t, terraformOptions, "output_name")
+	assert.NotNil(output)
 }
