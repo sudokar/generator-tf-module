@@ -56,26 +56,59 @@ To use the included generator execute the below command in shell and provide you
 ```sh
 > yo tf-module
 ...
-? Enter a name for the terraform module :  example-module
+? Enter name for the new terraform module :  example-module
+? Enter description for the new terraform module :  A new terraform module
+? Enter author name :  sudokar
+? Choose test framework (Use arrow keys)
+❯ Terratest
+  kitchen-terraform
 ```
 
-Project layout generated for the new module
+Project layout generated for the new module with _Terratest_ selection
 
 ```
 example-module
-├── .gitignore
 ├── .editorconfig
+├── .gitattributes
+├── .gitignore
 ├── .pre-commit-config.yaml
 ├── .terraform-version
+├── README.md
 ├── main.tf
 ├── outputs.tf
-└── variables.tf
+├── variables.tf
 ├── example
 │   ├── main.tf
 │   ├── outputs.tf
 │   └── variables.tf
 ├── test
-│   └── example_test.go
+    └── example_test.go
+```
+
+Project layout generated for the new module with _kitchen-terraform_ selection
+
+```
+example-module
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── .pre-commit-config.yaml
+├── .terraform-version
+├── .ruby-version
+├── .kitchen.yml
+├── Gemfile
+├── README.md
+├── main.tf
+├── outputs.tf
+├── variables.tf
+├── example
+│   ├── main.tf
+│   ├── outputs.tf
+│   └── variables.tf
+├── test
+    └── integration
+        └── default
+            └── example_spec.rb
 ```
 
 ##### Post generation steps
