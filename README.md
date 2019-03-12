@@ -27,15 +27,15 @@ Scaffolding for new Terraform module projects
 - [terraform-docs](https://github.com/segmentio/terraform-docs)
 - [pre-commit](https://pre-commit.com/#install)
 - For tests
-  - `terratest`
-    - [golang](https://golang.org/doc/install#install)
+  - **terratest**
+    - [golang](https://golang.org/doc/install#install) `pro tip : use gvm`
     - [golint](https://github.com/golang/lint#installation)
-  - `kitchen-terraform`
-    - [ruby](https://rvm.io/)
+  - **kitchen-terraform**
+    - [ruby](https://rvm.io/) `pro tip: use rvm`
 
 ### Installation
 
-1. Install [nodejs](https://nodejs.org/en/download/)
+1. Install [nodejs](https://nodejs.org/en/download/) `pro tip: use nvm`
 
 2. Install Yeoman
 
