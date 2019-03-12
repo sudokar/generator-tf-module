@@ -1,6 +1,6 @@
 {
   "name": "generator-tf-module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Scaffolding for Terraform module project",
   "main": "index.js",
   "files": [

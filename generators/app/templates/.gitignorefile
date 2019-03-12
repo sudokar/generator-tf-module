@@ -2,4 +2,5 @@
 terraform.tfstate
 *.tfstate*
 terraform.tfvars
-*.backup
+*.backup<% if(testFramework == '2') { %>
+*.kitchen<% } %>

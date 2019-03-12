@@ -9,28 +9,70 @@ module.exports = class extends Generator {
 
   async prompting() {
     this.log(
-      yosay('Welcome to the tf-module generator!')
+      yosay('Welcome to the tf-module generator v0.3.0!')
     );
 
     this.answers = await this.prompt([{
-      type: 'input',
-      name: 'name',
-      message: 'Enter name for the new terraform module : ',
-    }]);
+        type: 'input',
+        name: 'name',
+        message: 'Enter name for the new terraform module : ',
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'Enter description for the new terraform module : ',
+      },
+      {
+        type: 'input',
+        name: 'author',
+        message: 'Enter author name : ',
+      },
+      {
+        type: 'list',
+        name: 'testFramework',
+        message: 'Choose test framework',
+        choices: [{
+            name: 'Terratest',
+            value: '1',
+            checked: true
+          },
+          {
+            name: 'kitchen-terraform',
+            value: '2'
+          },
+        ]
+      }
+    ]);
   }
 
   writing() {
     this.destinationRoot(this.answers.name);
 
     this.fs.copyTpl(
-      `${this.templatePath()}/**/.!(gitignore)*`,
+      `${this.templatePath()}/.!(gitignorefile|gitattributesfile|pre-commit-config)*`,
       this.destinationRoot(),
       this.props
     );
 
     this.fs.copyTpl(
       this.templatePath('.gitignorefile'),
-      this.destinationPath(`.gitignore`),
+      this.destinationPath(`.gitignore`), {
+        testFramework: this.answers.testFramework
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('.gitattributesfile'),
+      this.destinationPath(`.gitattributes`), {
+        testFramework: this.answers.testFramework
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('.pre-commit-config.yaml'),
+      this.destinationPath(`.pre-commit-config.yaml`), {
+        testFramework: this.answers.testFramework
+      }
     );
 
     this.fs.copyTpl(
@@ -38,15 +80,29 @@ module.exports = class extends Generator {
       this.destinationRoot()
     );
 
-    this.fs.copyTpl(
-      `${this.templatePath()}/**/*.go`,
-      this.destinationRoot()
-    );
+    if (this.answers.testFramework === '1') {
+      this.fs.copyTpl(
+        `${this.templatePath()}/test/terratest/*.go`,
+        `${this.destinationRoot()}/test`
+      );
+    } else {
+      this.fs.copyTpl(
+        `${this.templatePath()}/test/kitchen-terraform/.*`,
+        this.destinationRoot()
+      );
+      this.fs.copyTpl(
+        `${this.templatePath()}/test/kitchen-terraform/**/*`,
+        this.destinationRoot()
+      );
+    }
 
     this.fs.copyTpl(
       this.templatePath('_README.md'),
       this.destinationPath('README.md'), {
-        name: this.answers.name
+        name: this.answers.name,
+        description: this.answers.description,
+        author: this.answers.author,
+        testFramework: this.answers.testFramework
       }
     );
   }
