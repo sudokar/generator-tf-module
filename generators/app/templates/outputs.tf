@@ -1,3 +1,4 @@
-output "output1" {
-  value = "value"
+output "output_name" {
+  value       = "value"
+  description = "description for output_name"
 }

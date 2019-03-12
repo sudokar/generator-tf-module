@@ -1,0 +1,21 @@
+---
+driver:
+  name: terraform
+  root_module_directory: ./example
+
+provisioner:
+  name: terraform
+
+platforms:
+  - name: terraform
+
+verifier:
+  name: terraform
+
+suites:
+  - name: default
+    verifier:
+      name: 'terraform'
+      systems:
+        - name: local system
+          backend: local
