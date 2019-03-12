@@ -8,27 +8,40 @@ Scaffolding for new Terraform module projects
 
 - `main.tf`, `variables.tf`,`outputs.tf` files to module root path
 
-- `.editorconfig`, `.gitignore` and `.terraform-version` files to module root path
+- `.editorconfig`, `.gitignore`, `.gitattributes` and `.terraform-version` files to module root path
 
-- `.pre-commit-config.yaml` for `terraform fmt`, `terraform-docs`, `go fmt`, `golint` and `check-merge-conflict`
+- Option to choose test frameworks
 
-- `test` directory with an example test based on [Terratest](https://github.com/gruntwork-io/terratest)
+  - [Terratest](https://github.com/gruntwork-io/terratest)
+  - [kitchen-terraform](https://github.com/newcontext-oss/kitchen-terraform)
 
-- `example` directory
+- `test` directory with an example test based on test framework selection
+
+- `.pre-commit-config.yaml` for `terraform fmt`, `terraform-docs`, `check-merge-conflict` and (`go fmt`, `golint`) / `rubocop`
+
+- `example` directory with module usage tf files
 
 ### Prerequisites
 
-* [terraform](https://learn.hashicorp.com/terraform/getting-started/install#installing-terraform)
-* [terraform-docs](https://github.com/segmentio/terraform-docs)
-* [golang](https://golang.org/doc/install#install)
-* [golint](https://github.com/golang/lint#installation)
-* [pre-commit](https://pre-commit.com/#install)
+- [terraform](https://learn.hashicorp.com/terraform/getting-started/install#installing-terraform)
+- [terraform-docs](https://github.com/segmentio/terraform-docs)
+- [pre-commit](https://pre-commit.com/#install)
+- For tests
+  - `terratest`
+    - [golang](https://golang.org/doc/install#install)
+    - [golint](https://github.com/golang/lint#installation)
+  - `kitchen-terraform`
+    - [ruby](https://rvm.io/)
 
 ### Installation
 
 1. Install [nodejs](https://nodejs.org/en/download/)
 
-2. Install Yeoman (npm install -g yo)
+2. Install Yeoman
+
+```sh
+npm install -g yo
+```
 
 3. Install this generator
 
@@ -83,7 +96,7 @@ On the generated module's root path, Install pre-commit hooks
 pre-commit install
 ```
 
-Step 3
+Step 3 (Applicable only for `terratest`)
 
 For golang tests, get below libs
 
@@ -99,7 +112,7 @@ To support maintenance of this project, <a href='https://ko-fi.com/O4O0RSHV'>Buy
 
 ### Contribution
 
-Found a bug? feel free to raise an issue.
+Found a bug? feel free to raise an issue.  
 Pull requests are always welcome. Keen to review and merge asap.
 
 ### Maintainers
