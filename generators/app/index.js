@@ -9,7 +9,7 @@ module.exports = class extends Generator {
 
   async prompting() {
     this.log(
-      yosay('Welcome to the tf-module generator v0.3.0!')
+      yosay('Welcome to the tf-module generator v0.4.0!')
     );
 
     this.answers = await this.prompt([{
