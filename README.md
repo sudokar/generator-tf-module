@@ -1,7 +1,5 @@
 # Terraform module generator [![npm version](https://badge.fury.io/js/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module)
 
-<a href='https://ko-fi.com/O4O0RSHV' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
 Scaffolding for new Terraform module projects
 
 ### Features
@@ -138,11 +136,6 @@ For golang tests, get below libs
 > go get github.com/stretchr/testify/assert
 ```
 
-### Support my project
-
-<a href='https://ko-fi.com/O4O0RSHV' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>  
-To support maintenance of this project, <a href='https://ko-fi.com/O4O0RSHV'>Buy Me a Coffee</a>
-
 ### Contribution
 
 Found a bug? feel free to raise an issue.  
@@ -155,7 +148,3 @@ This project is maintained by [sudokar](https://github.com/sudokar)
 ### License
 
 MIT
-
-#### Keywords
-
-[terraform](https://www.npmjs.com/search?q=keywords:terraform) [scaffolding](https://www.npmjs.com/search?q=keywords:scaffolding) [yeoman](https://www.npmjs.com/search?q=keywords:yeoman) [terraform module](https://www.npmjs.com/search?q=keywords:terraform%20module)
