@@ -29,6 +29,21 @@ module.exports = class extends Generator {
       },
       {
         type: 'list',
+        name: 'tfVersion',
+        message: 'Choose terraform version',
+        choices: [{
+            name: '0.12',
+            value: '12',
+            checked: true
+          },
+          {
+            name: '0.11',
+            value: '11'
+          },
+        ]
+      },
+      {
+        type: 'list',
         name: 'testFramework',
         message: 'Choose test framework',
         choices: [{
@@ -49,7 +64,7 @@ module.exports = class extends Generator {
     this.destinationRoot(this.answers.name);
 
     this.fs.copyTpl(
-      `${this.templatePath()}/.!(gitignorefile|gitattributesfile|pre-commit-config)*`,
+      `${this.templatePath()}/.!(gitignorefile|gitattributesfile|pre-commit-config|terraform-version)*`,
       this.destinationRoot(),
       this.props
     );
@@ -72,6 +87,13 @@ module.exports = class extends Generator {
       this.templatePath('.pre-commit-config.yaml'),
       this.destinationPath(`.pre-commit-config.yaml`), {
         testFramework: this.answers.testFramework
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('.terraform-version'),
+      this.destinationPath(`.terraform-version`), {
+        tfVersion: this.answers.tfVersion
       }
     );
 
