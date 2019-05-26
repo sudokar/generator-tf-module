@@ -36,14 +36,11 @@ module "<%= name %>" {
 
 - [terraform](https://learn.hashicorp.com/terraform/getting-started/install#installing-terraform)
 - [terraform-docs](https://github.com/segmentio/terraform-docs)
-- [pre-commit](https://pre-commit.com/#install)
-<% if (testFramework == '1') { %>
+- [pre-commit](https://pre-commit.com/#install)<% if (testFramework == '1') { %>
 - [golang](https://golang.org/doc/install#install)
-- [golint](https://github.com/golang/lint#installation)
-<% } %>
+- [golint](https://github.com/golang/lint#installation)<% } -%>
 <% if (testFramework == '2') { %>
-- [ruby](https://rvm.io/)
-<% } %>
+- [ruby](https://rvm.io/)<% } %>
 
 ### Configurations
 
