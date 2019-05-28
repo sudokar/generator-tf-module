@@ -55,8 +55,11 @@ To use the included generator execute the below command in shell and provide you
 > yo tf-module
 ...
 ? Enter name for the new terraform module :  example-module
-? Enter description for the new terraform module :  A new terraform module
+? Enter description for the new terraform module :  Example terraform module
 ? Enter author name :  sudokar
+? Choose terraform version (Use arrow keys)
+❯ 0.12
+  0.11
 ? Choose test framework (Use arrow keys)
 ❯ Terratest
   kitchen-terraform
@@ -141,7 +144,7 @@ For golang tests, get below libs
 Found a bug? feel free to raise an issue.  
 Pull requests are always welcome. Keen to review and merge asap.
 
-### Maintainers
+### Maintainer
 
 This project is maintained by [sudokar](https://github.com/sudokar)
 
