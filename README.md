@@ -33,26 +33,14 @@ Scaffolding for new Terraform module projects
 
 ### Installation
 
-1. Install [nodejs](https://nodejs.org/en/download/) `pro tip: use nvm`
-
-2. Install Yeoman
-
-```sh
-npm install -g yo
-```
-
-3. Install this generator
-
-```shell
-npm install -g generator-tf-module
-```
+Install [nodejs](https://nodejs.org/en/download/) `pro tip: use nvm`
 
 ### Usage
 
 To use the included generator execute the below command in shell and provide your new module name for the prompt
 
 ```sh
-> yo tf-module
+> npx -p yo -p generator-tf-module -c 'yo tf-module'
 ...
 ? Enter name for the new terraform module :  example-module
 ? Enter description for the new terraform module :  Example terraform module
