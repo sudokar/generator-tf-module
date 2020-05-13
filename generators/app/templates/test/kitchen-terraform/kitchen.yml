@@ -15,7 +15,6 @@ verifier:
 suites:
   - name: default
     verifier:
-      name: 'terraform'
       systems:
-        - name: local system
+        - name: local
           backend: local

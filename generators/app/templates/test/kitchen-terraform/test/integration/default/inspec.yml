@@ -1,0 +1,8 @@
+name: example_suite
+title: Example Kitchen-Terraform Suite
+version: 0.1.0
+attributes:
+  - name: output_name
+    type: string
+    required: true
+    description: The Terraform configuration under test must define an equivalently named output
