@@ -1,6 +1,6 @@
 {
-  "name": "generator-tf-module",
-  "version": "0.6.0",
+  "name": "generator-aag-terraform-module",
+  "version": "0.6.1",
   "description": "Scaffolding for Terraform module project",
   "main": "index.js",
   "files": [
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/sudokar/generator-terraform-module.git"
+    "url": "git+ssh://git@github.com/nweddle/generator-aag-terraform-module.git"
   },
   "keywords": [
     "yeoman-generator",
@@ -20,14 +20,14 @@
     "terraform scaffold",
     "scaffold"
   ],
-  "author": "sudokar",
+  "author": "AAG",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sudokar/generator-terraform-module/issues"
+    "url": "https://github.com/nweddle/generator-aag-terraform-module/issues"
   },
-  "homepage": "https://github.com/sudokar/generator-terraform-module#readme",
+  "homepage": "https://github.com/nweddle/generator-aag-terraform-module#readme",
   "dependencies": {
-    "yeoman-generator": "^4.9.0",
+    "yeoman-generator": "^4.10.0",
     "yosay": "^2.0.2"
   }
 }

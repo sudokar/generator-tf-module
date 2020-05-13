@@ -9,54 +9,55 @@ module.exports = class extends Generator {
 
   async prompting() {
     this.log(
-      yosay('Welcome to the tf-module generator v0.6.0!')
+      yosay('Welcome to the aag-terraform-module generator v0.6.1!')
     );
 
     this.answers = await this.prompt([{
-        type: 'input',
-        name: 'name',
-        message: 'Enter name for the new terraform module : ',
+      type: 'input',
+      name: 'name',
+      message: 'Enter name for the new terraform module : ',
+    },
+    {
+      type: 'input',
+      name: 'description',
+      message: 'Enter description for the new terraform module : ',
+    },
+    {
+      type: 'input',
+      name: 'author',
+      message: 'Enter author name : ',
+    },
+    {
+      type: 'list',
+      name: 'tfVersion',
+      message: 'Choose terraform version',
+      choices: [{
+        name: '0.12',
+        value: '12',
+        checked: true
       },
       {
-        type: 'input',
-        name: 'description',
-        message: 'Enter description for the new terraform module : ',
+        name: '0.11',
+        value: '11'
       },
-      {
-        type: 'input',
-        name: 'author',
-        message: 'Enter author name : ',
-      },
-      {
-        type: 'list',
-        name: 'tfVersion',
-        message: 'Choose terraform version',
-        choices: [{
-            name: '0.12',
-            value: '12',
-            checked: true
-          },
-          {
-            name: '0.11',
-            value: '11'
-          },
-        ]
-      },
-      {
-        type: 'list',
-        name: 'testFramework',
-        message: 'Choose test framework',
-        choices: [{
-            name: 'Terratest',
-            value: '1',
-            checked: true
-          },
-          {
-            name: 'kitchen-terraform',
-            value: '2'
-          },
-        ]
-      }
+      ]
+    },
+    {
+      type: 'list',
+      name: 'testFramework',
+      message: 'Choose test framework',
+      choices: [
+        {
+          name: 'kitchen-terraform',
+          value: '2',
+          checked: true
+        },
+        {
+          name: 'Terratest',
+          value: '1',
+        },
+      ]
+    }
     ]);
   }
 
@@ -72,29 +73,29 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('.gitignorefile'),
       this.destinationPath(`.gitignore`), {
-        testFramework: this.answers.testFramework
-      }
+      testFramework: this.answers.testFramework
+    }
     );
 
     this.fs.copyTpl(
       this.templatePath('.gitattributesfile'),
       this.destinationPath(`.gitattributes`), {
-        testFramework: this.answers.testFramework
-      }
+      testFramework: this.answers.testFramework
+    }
     );
 
     this.fs.copyTpl(
       this.templatePath('.pre-commit-config.yaml'),
       this.destinationPath(`.pre-commit-config.yaml`), {
-        testFramework: this.answers.testFramework
-      }
+      testFramework: this.answers.testFramework
+    }
     );
 
     this.fs.copyTpl(
       this.templatePath('.terraform-version'),
       this.destinationPath(`.terraform-version`), {
-        tfVersion: this.answers.tfVersion
-      }
+      tfVersion: this.answers.tfVersion
+    }
     );
 
     this.fs.copyTpl(
@@ -121,11 +122,11 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('_README.md'),
       this.destinationPath('README.md'), {
-        name: this.answers.name,
-        description: this.answers.description,
-        author: this.answers.author,
-        testFramework: this.answers.testFramework
-      }
+      name: this.answers.name,
+      description: this.answers.description,
+      author: this.answers.author,
+      testFramework: this.answers.testFramework
+    }
     );
   }
 };
