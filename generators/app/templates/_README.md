@@ -15,18 +15,30 @@ module "<%= name %>" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| null | ~> 2.1 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| null | ~> 2.1 |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| mandatory | this field is mandatory | string | n/a | yes |
-| optional | this field is optional | string | `"default_value"` | no |
+|------|-------------|------|---------|:--------:|
+| mandatory | this field is mandatory | `string` | n/a | yes |
+| optional | this field is optional | `string` | `"default_value"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| output\_name | description for output_name |
+| output\_name | description for output\_name |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
