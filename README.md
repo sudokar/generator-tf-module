@@ -1,4 +1,5 @@
-# Terraform module generator [![npm version](https://badge.fury.io/js/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module)
+# Terraform module generator
+[![npm version](https://badge.fury.io/js/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module) [![Docker Stars](https://img.shields.io/docker/stars/sudokar/generator-tf-module.svg)](https://hub.docker.com/r/sudokar/generator-tf-module) [![Docker Pulls](https://img.shields.io/docker/pulls/sudokar/generator-tf-module.svg)](https://hub.docker.com/r/outrigger/yeoman) ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/sudokar/generator-tf-module?color=blue&label=Docker%20Image%20Version)
 
 Scaffolding for new Terraform module projects
 
@@ -8,7 +9,7 @@ Scaffolding for new Terraform module projects
 
 - `.editorconfig`, `.gitignore`, `.gitattributes` and `.terraform-version` files to module root path
 
-- Option to choose test frameworks
+- Option to choose test framework
 
   - [Terratest](https://github.com/gruntwork-io/terratest)
   - [kitchen-terraform](https://github.com/newcontext-oss/kitchen-terraform)
@@ -33,14 +34,23 @@ Scaffolding for new Terraform module projects
 
 ### Installation
 
-Install [nodejs](https://nodejs.org/en/download/) `pro tip: use nvm`
+- To use generator using Docker, Install [Docker](https://docs.docker.com/engine/install/) `recommended`
+- To use generator using Nodejs, Install [nodejs](https://nodejs.org/en/download/) `pro tip: use nvm`
 
 ### Usage
 
-To use the included generator execute the below command in shell and provide your new module name for the prompt
+To use the included generator execute the below command in shell and provide your answers to the prompts.
 
+##### With Docker:
+```sh
+> docker run --rm -it -v $PWD:/generated sudokar/generator-tf-module
+```
+##### With NodeJs:
 ```sh
 > npx -p yo -p generator-tf-module -c 'yo tf-module'
+```
+##### Prompts:
+```sh
 ...
 ? Enter name for the new terraform module :  example-module
 ? Enter description for the new terraform module :  Example terraform module
@@ -134,7 +144,7 @@ Pull requests are always welcome. Keen to review and merge asap.
 
 ### Maintainer
 
-This project is maintained by [sudokar](https://github.com/sudokar)
+This project is authored and maintained by [sudokar](https://github.com/sudokar)
 
 ### License
 
