@@ -10,7 +10,7 @@
 
 ```hcl
 module "<%= name %>" {
-  source = "git::ssh://"
+  source = "<%= source %>"
 }
 ```
 

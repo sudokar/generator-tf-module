@@ -28,6 +28,11 @@ module.exports = class extends Generator {
         message: 'Enter author name : ',
       },
       {
+        type: 'input',
+        name: 'source',
+        message: 'Enter the location of the module (for the "source" parameter) : ',
+      },
+      {
         type: 'list',
         name: 'tfVersion',
         message: 'Choose terraform version',
@@ -124,7 +129,8 @@ module.exports = class extends Generator {
         name: this.answers.name,
         description: this.answers.description,
         author: this.answers.author,
-        testFramework: this.answers.testFramework
+        testFramework: this.answers.testFramework,
+        source: this.answers.source,
       }
     );
   }
