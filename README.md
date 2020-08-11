@@ -56,7 +56,8 @@ To use the included generator execute the below command in shell and provide you
 ? Enter description for the new terraform module :  Example terraform module
 ? Enter author name :  sudokar
 ? Choose terraform version (Use arrow keys)
-❯ 0.12
+❯ 0.13
+  0.12
   0.11
 ? Choose test framework (Use arrow keys)
 ❯ Terratest
