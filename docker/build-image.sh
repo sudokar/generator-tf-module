@@ -1,6 +1,6 @@
 #! /bin/bash
 
-VERSION=0.6.1
+VERSION=0.7.0
 
 docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
              --build-arg VCS_REF=`git rev-parse --short HEAD` \

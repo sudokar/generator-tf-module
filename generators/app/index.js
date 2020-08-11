@@ -9,7 +9,7 @@ module.exports = class extends Generator {
 
   async prompting() {
     this.log(
-      yosay('Welcome to the tf-module generator v0.6.1!')
+      yosay('Welcome to the tf-module generator v0.7.0!')
     );
 
     this.answers = await this.prompt([{
@@ -31,10 +31,15 @@ module.exports = class extends Generator {
         type: 'list',
         name: 'tfVersion',
         message: 'Choose terraform version',
-        choices: [{
+        choices: [
+          {
+            name: '0.13',
+            value: '13',
+            checked: true
+          },
+          {
             name: '0.12',
             value: '12',
-            checked: true
           },
           {
             name: '0.11',
