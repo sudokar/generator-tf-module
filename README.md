@@ -43,7 +43,7 @@ To use the included generator execute the below command in shell and provide you
 
 ##### With Docker:
 ```sh
-> docker run --rm -it -v $PWD:/generated sudokar/generator-tf-module
+> docker run --rm -it -v $(pwd):/generated -e myuid="$(id -u):$(id -g)" sudokar/generator-tf-module
 ```
 ##### With NodeJs:
 ```sh
