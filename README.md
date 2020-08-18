@@ -1,5 +1,5 @@
 # Terraform module generator
-[![npm version](https://badge.fury.io/js/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module) [![Docker Stars](https://img.shields.io/docker/stars/sudokar/generator-tf-module.svg)](https://hub.docker.com/r/sudokar/generator-tf-module) [![Docker Pulls](https://img.shields.io/docker/pulls/sudokar/generator-tf-module.svg)](https://hub.docker.com/r/outrigger/yeoman) ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/sudokar/generator-tf-module?color=blue&label=Docker%20Image%20Version)
+[![npm version](https://badge.fury.io/js/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module) [![npm](https://img.shields.io/npm/dt/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module) [![Docker Stars](https://img.shields.io/docker/stars/sudokar/generator-tf-module.svg)](https://hub.docker.com/r/sudokar/generator-tf-module) [![Docker Pulls](https://img.shields.io/docker/pulls/sudokar/generator-tf-module.svg)](https://hub.docker.com/r/sudokar/generator-tf-module) ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/sudokar/generator-tf-module?color=blue&label=Docker%20Image%20Version)
 
 Scaffolding for new Terraform module projects
 
@@ -43,7 +43,7 @@ To use the included generator execute the below command in shell and provide you
 
 ##### With Docker:
 ```sh
-> docker run --rm -it -v $PWD:/generated sudokar/generator-tf-module
+> docker run --rm -it -v $(pwd):/generated -e myuid="$(id -u):$(id -g)" sudokar/generator-tf-module
 ```
 ##### With NodeJs:
 ```sh
@@ -56,7 +56,8 @@ To use the included generator execute the below command in shell and provide you
 ? Enter description for the new terraform module :  Example terraform module
 ? Enter author name :  sudokar
 ? Choose terraform version (Use arrow keys)
-❯ 0.12
+❯ 0.13
+  0.12
   0.11
 ? Choose test framework (Use arrow keys)
 ❯ Terratest
