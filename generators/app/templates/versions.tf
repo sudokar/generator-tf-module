@@ -1,12 +1,8 @@
 terraform {
   required_providers {
-    google = {
-      source = "hashicorp/google"
-      version = "~>3.47.0"
-    }
-    google-beta = {
-      source = "hashicorp/google"
-      version = "~>3.47.0"
+    <%= tfProvider %> = {
+      source = "hashicorp/<%= tfProvider %>"
+      version = "~><%= tfProviderVersion %>"
     }
   }
   required_version = ">= <%= tfVersion %>"

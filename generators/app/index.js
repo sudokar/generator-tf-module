@@ -33,6 +33,16 @@ module.exports = class extends Generator {
         message: 'Enter Terraform Version : ',
       },
       {
+        type: 'input',
+        name: 'tfProvider',
+        message: 'Enter Terraform Provider to use (for example google / aws / azurerm ...): ',
+      },
+      {
+        type: 'input',
+        name: 'tfProviderVersion',
+        message: 'Enter Terraform Provider version: ',
+      },
+      {
         type: 'list',
         name: 'testFramework',
         message: 'Choose test framework',
@@ -90,7 +100,9 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       `${this.templatePath()}/**/*.tf`,
       this.destinationRoot(),{
-        tfVersion: this.answers.tfVersion
+        tfVersion: this.answers.tfVersion,
+        tfProviderVersion: this.answers.tfProviderVersion,
+        tfProvider: this.answers.tfProvider
       }
     );
 
