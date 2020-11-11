@@ -28,24 +28,19 @@ module.exports = class extends Generator {
         message: 'Enter author name : ',
       },
       {
-        type: 'list',
+        type: 'input',
         name: 'tfVersion',
-        message: 'Choose terraform version',
-        choices: [
-          {
-            name: '0.13',
-            value: '13',
-            checked: true
-          },
-          {
-            name: '0.12',
-            value: '12',
-          },
-          {
-            name: '0.11',
-            value: '11'
-          },
-        ]
+        message: 'Enter Terraform Version : ',
+      },
+      {
+        type: 'input',
+        name: 'tfProvider',
+        message: 'Enter Terraform Provider to use (for example google / aws / azurerm ...): ',
+      },
+      {
+        type: 'input',
+        name: 'tfProviderVersion',
+        message: 'Enter Terraform Provider version: ',
       },
       {
         type: 'list',
@@ -104,7 +99,11 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       `${this.templatePath()}/**/*.tf`,
-      this.destinationRoot()
+      this.destinationRoot(),{
+        tfVersion: this.answers.tfVersion,
+        tfProviderVersion: this.answers.tfProviderVersion,
+        tfProvider: this.answers.tfProvider
+      }
     );
 
     if (this.answers.testFramework === '1') {

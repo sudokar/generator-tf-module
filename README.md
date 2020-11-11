@@ -5,7 +5,7 @@ Scaffolding for new Terraform module projects
 
 ### Features
 
-- `main.tf`, `variables.tf`,`outputs.tf` files to module root path
+- `main.tf`, `variables.tf`,`outputs.tf`,`versions.tf`,`provider.tf` files to module root path
 
 - `.editorconfig`, `.gitignore`, `.gitattributes` and `.terraform-version` files to module root path
 
@@ -16,7 +16,7 @@ Scaffolding for new Terraform module projects
 
 - `test` directory with an example test based on test framework selection
 
-- `.pre-commit-config.yaml` for `terraform fmt`, `terraform-docs`, `check-merge-conflict` and (`go fmt`, `golint`) / `rubocop`
+- `.pre-commit-config.yaml` for `terraform fmt`, `terraform validate`, `terraform tflint`, `terraform tfsec`, `terraform checkov`, `terraform-docs`, `check-merge-conflict`, `detect-aws-credentials`, `detect-private-key`, `pretty-format-json --autofix`, `trailing-whitespace` and (`go fmt`, `golint`) / `rubocop`
 
 - `example` directory with module usage tf files
 
