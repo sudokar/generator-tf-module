@@ -5,7 +5,8 @@ repos:
       - id: check-merge-conflict
       - id: detect-aws-credentials
       - id: detect-private-key
-      - id: pretty-format-json --autofix
+      - id: pretty-format-json 
+        args: [ --autofix ]
       - id: trailing-whitespace
   - repo: git://github.com/antonbabenko/pre-commit-terraform
     rev: v1.44.0
