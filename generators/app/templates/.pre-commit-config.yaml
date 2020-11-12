@@ -3,7 +3,6 @@ repos:
     rev: v3.3.0
     hooks:
       - id: check-merge-conflict
-      - id: detect-aws-credentials
       - id: detect-private-key
       - id: pretty-format-json 
         args: [ --autofix ]
