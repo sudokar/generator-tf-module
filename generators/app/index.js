@@ -33,9 +33,13 @@ module.exports = class extends Generator {
         message: 'Choose terraform version',
         choices: [
           {
-            name: '0.13',
-            value: '13',
+            name: '0.14.0-rc1',
+            value: '14',
             checked: true
+          },
+          {
+            name: '0.13',
+            value: '13'
           },
           {
             name: '0.12',
