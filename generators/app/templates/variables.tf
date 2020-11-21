@@ -1,5 +1,5 @@
 variable "mandatory" {
-  type        = "string"
+  type        = string
   description = "this field is mandatory"
 }
 
