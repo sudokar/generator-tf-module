@@ -11,8 +11,8 @@ module.exports = class extends Generator {
   }
 
   initializing() {
-    this.log("Reading home directory .yo-rc.json");
-    const homedirYoRc = path.join(homedir, ".yo-rc.json");
+    this.log("Reading home directory .yo-rc.json.skel");
+    const homedirYoRc = path.join(homedir, ".yo-rc.json.skel");
     this.homedirConfig = this.createStorage(homedirYoRc);
   }
 
