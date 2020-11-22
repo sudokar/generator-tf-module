@@ -1,10 +1,18 @@
 'use strict';
 const Generator = require('yeoman-generator');
+const homedir = require('os').homedir();
+const path = require('path');
 const yosay = require('yosay');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
+  }
+
+  initializing() {
+    this.log("Reading home directory .yo-rc.json");
+    const homedirYoRc = path.join(homedir, ".yo-rc.json");
+    this.homedirConfig = this.createStorage(homedirYoRc);
   }
 
   async prompting() {
@@ -16,6 +24,11 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'name',
         message: 'Enter name for the new terraform module : ',
+      },
+      {
+        type: 'input',
+        name: 'tfStatePath',
+        message: 'Enter Terraform state path : ',
       },
       {
         type: 'input',
@@ -62,6 +75,8 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    var homeDirValues = this.homedirConfig.get("generator-tf-module")
+
     this.destinationRoot(this.answers.name);
 
     this.fs.copyTpl(
@@ -101,7 +116,9 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       `${this.templatePath()}/**/*.tf`,
       this.destinationRoot(), {
-        tfVersion: this.answers.tfVersion
+        tfVersion: this.answers.tfVersion,
+        backendGcsBucket: homeDirValues.backendGcsBucket,
+        backendGcsPrefix: this.answers.tfStatePath
       }
     );
 
