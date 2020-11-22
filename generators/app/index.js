@@ -7,6 +7,7 @@ const yosay = require('yosay');
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
+    this.argument("state-path", { type: String, required: true });
   }
 
   initializing() {
@@ -24,11 +25,6 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'name',
         message: 'Enter name for the new terraform module : ',
-      },
-      {
-        type: 'input',
-        name: 'tfStatePath',
-        message: 'Enter Terraform state path : ',
       },
       {
         type: 'input',
@@ -118,7 +114,7 @@ module.exports = class extends Generator {
       this.destinationRoot(), {
         tfVersion: this.answers.tfVersion,
         backendGcsBucket: homeDirValues.backendGcsBucket,
-        backendGcsPrefix: this.answers.tfStatePath
+        backendGcsPrefix: this.options["state-path"]
       }
     );
 
