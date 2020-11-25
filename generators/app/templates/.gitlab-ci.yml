@@ -48,7 +48,7 @@ plan:
 apply:
   stage: apply
   only:
-    - default
+    - main
   script:
     - terraform apply -input=false $PLAN
   dependencies:
