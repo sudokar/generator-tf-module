@@ -118,6 +118,10 @@ module.exports = class extends Generator {
       }
     );
 
+    this.fs.copyTpl(
+      `${this.templatePath()}/templates/*`,
+      `${this.destinationRoot()}/templates`);
+
     if (this.answers.testFramework === '1') {
       this.fs.copyTpl(
         `${this.templatePath()}/test/terratest/*.go`,
