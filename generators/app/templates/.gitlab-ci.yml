@@ -5,7 +5,7 @@
 # Entrypoint is also needed as image by default set `terraform` binary as an
 # entrypoint.
 image:
-  name: registry.gitlab.com/gitlab-org/gitlab-build-images:terraform
+  name: hashicorp/terraform:0.14.0-rc1
   entrypoint:
     - '/usr/bin/env'
     - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
