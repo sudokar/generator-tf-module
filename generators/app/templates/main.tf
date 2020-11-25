@@ -16,7 +16,9 @@ resource "google_compute_instance" "example" {
     }
   }
 
-  metadata_startup_script = file("${path.module}/templates/cloud-config.yaml")
+  metadata = {
+    "user-data" = file("${path.module}/templates/cloud-config.yaml")
+  }
 
   service_account {
     scopes = ["userinfo-email", "compute-ro", "storage-ro"]
