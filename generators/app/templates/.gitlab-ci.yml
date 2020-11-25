@@ -38,12 +38,12 @@ plan:
   stage: plan
   script:
     - terraform plan -out=$PLAN
-    - "terraform show --json $PLAN | convert_report > $JSON_PLAN_FILE"
+    # - "terraform show --json $PLAN | convert_report > $JSON_PLAN_FILE"
   artifacts:
     paths:
       - $PLAN
-    reports:
-      terraform: $JSON_PLAN_FILE
+    # reports:
+    #   terraform: $JSON_PLAN_FILE
 
 apply:
   stage: apply
