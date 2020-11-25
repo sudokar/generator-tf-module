@@ -53,3 +53,5 @@ apply:
     - terraform apply -input=false $PLAN
   dependencies:
     - plan
+
+  when:manual
