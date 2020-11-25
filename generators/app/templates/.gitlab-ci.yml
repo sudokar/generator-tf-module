@@ -47,11 +47,10 @@ plan:
 
 apply:
   stage: apply
-  only:
-    - main
   script:
     - terraform apply -input=false $PLAN
   dependencies:
     - plan
-
-  when:manual
+  only:
+    - main
+  when: manual
