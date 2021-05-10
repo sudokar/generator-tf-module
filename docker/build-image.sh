@@ -42,4 +42,3 @@ docker build --build-arg BUILD_DATE=$BUILD_DATE \
              --build-arg VERSION=$VERSION \
              --tag $OWNER/$NAME:$VERSION \
              "${DOCKER_ROOT}"
-

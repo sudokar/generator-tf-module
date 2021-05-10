@@ -33,7 +33,7 @@ WORKDIR /generated
 RUN npm install --global --silent generator-tf-module \
     && mkdir -p /home/yeoman/.config/configstore \
     && chown -R yeoman . \
-    && chmod g+rwx /home/yeoman /home/yeoman/.config /home/yeoman/.config/configstore
+    && chmod -R g+rwx /home/yeoman /home/yeoman/.config /home/yeoman/.config/configstore
 
 USER yeoman
 

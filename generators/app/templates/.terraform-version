@@ -1,3 +1,3 @@
-<% if (tfVersion == '11') { %>0.11.14<% } -%>
-<% if (tfVersion == '12') { %>0.12.29<% } -%>
-<% if (tfVersion == '13') { %>0.13.0<% } -%>
+<% if (tfVersion == '15') { %>latest:^0.15<% } -%>
+<% if (tfVersion == '14') { %>latest:^0.14<% } -%>
+<% if (tfVersion == '13') { %>latest:^0.13<% } -%>

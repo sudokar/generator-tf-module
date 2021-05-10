@@ -1,7 +1,7 @@
 # Terraform module generator
-[![npm version](https://badge.fury.io/js/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module) [![npm](https://img.shields.io/npm/dt/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module) [![Docker Stars](https://img.shields.io/docker/stars/sudokar/generator-tf-module.svg)](https://hub.docker.com/r/sudokar/generator-tf-module) [![Docker Pulls](https://img.shields.io/docker/pulls/sudokar/generator-tf-module.svg)](https://hub.docker.com/r/sudokar/generator-tf-module) ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/sudokar/generator-tf-module?color=blue&label=Docker%20Image%20Version)
+[![npm version](https://badge.fury.io/js/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module) [![npm](https://img.shields.io/npm/dt/generator-tf-module.svg)](https://www.npmjs.com/package/generator-tf-module) [![Docker Pulls](https://img.shields.io/docker/pulls/sudokar/generator-tf-module.svg)](https://hub.docker.com/r/sudokar/generator-tf-module) ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/sudokar/generator-tf-module?color=blue&label=Docker%20Image%20Version)
 
-Scaffolding for new Terraform module projects
+Scaffolding / Boilerplate generator for new Terraform module projects
 
 ### Features
 
