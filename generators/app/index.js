@@ -28,24 +28,9 @@ module.exports = class extends Generator {
         message: 'Enter author name : ',
       },
       {
-        type: 'list',
+        type: 'input',
         name: 'tfVersion',
-        message: 'Choose terraform version',
-        choices: [
-          {
-            name: '0.15',
-            value: '15',
-            checked: true
-          },
-          {
-            name: '0.14',
-            value: '14',
-          },
-          {
-            name: '0.13',
-            value: '13'
-          },
-        ]
+        message: 'Enter terraform version : ',
       },
       {
         type: 'list',
