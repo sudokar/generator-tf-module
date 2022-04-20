@@ -44,14 +44,30 @@ To use the included generator execute the below command in shell and provide you
 
 #### With Docker
 
+For Terraform version 1
+
 ```sh
 docker run --rm -it -v $(pwd):/generated -e myuid="$(id -u):$(id -g)" sudokar/generator-tf-module
 ```
 
+For Terraform versions `0.15`, `0.14` and `0.13`
+
+```sh
+docker run --rm -it -v $(pwd):/generated -e myuid="$(id -u):$(id -g)" sudokar/generator-tf-module:0.9.0
+```
+
 #### With NodeJs
+
+For Terraform version 1
 
 ```sh
 npx -p yo -p generator-tf-module -c 'yo tf-module'
+```
+
+For Terraform versions `0.15`, `0.14` and `0.13`
+
+```sh
+npx -p yo -p generator-tf-module@0.9.0 -c 'yo tf-module'
 ```
 
 #### Prompts
@@ -61,10 +77,6 @@ npx -p yo -p generator-tf-module -c 'yo tf-module'
 ? Enter name for the new terraform module :  example-module
 ? Enter description for the new terraform module :  Example terraform module
 ? Enter author name :  sudokar
-? Choose terraform version (Use arrow keys)
-❯ 0.15
-  0.14
-  0.13
 ? Choose test framework (Use arrow keys)
 ❯ Terratest
   kitchen-terraform
