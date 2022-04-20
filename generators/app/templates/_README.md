@@ -19,27 +19,36 @@ module "<%= name %>" {
 
 | Name | Version |
 |------|---------|
-| null | ~> 2.1 |
+| <a name="requirement_null"></a> [null](#requirement\_null) | 3.1.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| null | ~> 2.1 |
+| <a name="provider_null"></a> [null](#provider\_null) | 3.1.1 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [null_resource.example](https://registry.terraform.io/providers/hashicorp/null/3.1.1/docs/resources/resource) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| mandatory | this field is mandatory | `string` | n/a | yes |
-| optional | this field is optional | `string` | `"default_value"` | no |
+| <a name="input_mandatory"></a> [mandatory](#input\_mandatory) | this field is mandatory | `string` | n/a | yes |
+| <a name="input_optional"></a> [optional](#input\_optional) | this field is optional | `string` | `"default_value"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| output\_name | description for output\_name |
-
+| <a name="output_output_name"></a> [output\_name](#output\_output\_name) | description for output\_name |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Development
@@ -64,8 +73,8 @@ pre-commit install
 <% if (testFramework == '1') { %>
 - Configure golang deps for tests
 ```sh
-> go get github.com/gruntwork-io/terratest/modules/terraform
-> go get github.com/stretchr/testify/assert
+go get github.com/gruntwork-io/terratest/modules/terraform
+go get github.com/stretchr/testify/assert
 ```
 <% } %>
 <% if (testFramework == '2') { %>

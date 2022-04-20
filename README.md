@@ -4,7 +4,7 @@
 
 Scaffolding / Boilerplate generator for new Terraform module projects
 
-### Features
+## Features
 
 - `main.tf`, `variables.tf`,`outputs.tf` files to module root path
 
@@ -21,7 +21,7 @@ Scaffolding / Boilerplate generator for new Terraform module projects
 
 - `example` directory with module usage tf files
 
-### Prerequisites
+## Prerequisites
 
 - [terraform](https://learn.hashicorp.com/terraform/getting-started/install#installing-terraform) `pro tip: use tfenv`
 - [terraform-docs](https://github.com/segmentio/terraform-docs)
@@ -33,28 +33,28 @@ Scaffolding / Boilerplate generator for new Terraform module projects
   - **kitchen-terraform**
     - [ruby](https://rvm.io/) `pro tip: use rvm`
 
-### Installation
+## Installation
 
 - To use generator using Docker, Install [Docker](https://docs.docker.com/engine/install/) `recommended`
 - To use generator using Nodejs, Install [nodejs](https://nodejs.org/en/download/) `pro tip: use nvm`
 
-### Usage
+## Usage
 
 To use the included generator execute the below command in shell and provide your answers to the prompts.
 
-##### With Docker
+#### With Docker
 
 ```sh
 docker run --rm -it -v $(pwd):/generated -e myuid="$(id -u):$(id -g)" sudokar/generator-tf-module
 ```
 
-##### With NodeJs
+#### With NodeJs
 
 ```sh
 npx -p yo -p generator-tf-module -c 'yo tf-module'
 ```
 
-##### Prompts
+#### Prompts
 
 ```sh
 ...
@@ -117,7 +117,7 @@ example-module
             └── example_spec.rb
 ```
 
-##### Post generation steps
+#### Post generation steps
 
 Step 1
 
@@ -140,19 +140,27 @@ Step 3 (Applicable only for `terratest`)
 For golang tests, get below libs
 
 ```sh
-> go get github.com/gruntwork-io/terratest/modules/terraform
-> go get github.com/stretchr/testify/assert
+go get github.com/gruntwork-io/terratest/modules/terraform
+go get github.com/stretchr/testify/assert
 ```
 
-### Contribution
+## Contribution
 
 Found a bug? feel free to raise an issue.  
 Pull requests are always welcome. Keen to review and merge asap.
 
-### Maintainer
+## Support
+
+Like the generator?
+
+Click to <a href="https://www.buymeacoffee.com/sudokar" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="50" width="250"></a>
+
+Or, Add a star :star: to the repository
+
+## Maintainer
 
 This project is authored and maintained by [sudokar](https://github.com/sudokar)
 
-### License
+## License
 
 MIT

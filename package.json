@@ -1,6 +1,6 @@
 {
   "name": "generator-tf-module",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Scaffolding for Terraform module project",
   "main": "index.js",
   "files": [
@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/sudokar/generator-terraform-module#readme",
   "dependencies": {
-    "yeoman-environment": "^3.3.0",
-    "yeoman-generator": "^5.2.0",
-    "yosay": "^2.0.2"
+    "yeoman-environment": "3.9.1",
+    "yeoman-generator": "5.6.1",
+    "yosay": "2.0.2"
   }
 }
