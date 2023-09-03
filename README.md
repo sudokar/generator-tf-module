@@ -152,8 +152,10 @@ Step 3 (Applicable only for `terratest`)
 For golang tests, get below libs
 
 ```sh
-go get github.com/gruntwork-io/terratest/modules/terraform
-go get github.com/stretchr/testify/assert
+go install github.com/gruntwork-io/terratest/modules/terraform@latest
+git clone https://github.com/stretchr/testify.git
+cd <testify repo>
+go get github.com/stretchr/testify
 ```
 
 ## Contribution
